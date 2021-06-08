@@ -30,21 +30,23 @@ This project is to perform simple file operations such as sorting, searching, de
 
 ### Main Menu
 
-![Main Menu](https://github.com/mcvrvikram/LockedMe.com/blob/main/src/com/flow.png)
+![Main Menu](https://github.com/mcvrvikram/LockedMe.com/blob/main/Images/flow.png)
 
 ### Sub Menu
-![Sub Menu](https://github.com/mcvrvikram/LockedMe.com/blob/main/src/com/FlowSub.png)
+![Sub Menu](https://github.com/mcvrvikram/LockedMe.com/blob/main/Images/FlowSub.png)
 
 ## How to execute
+Needed JavaSE 1.8 or above
+
 Download the src/com folder and run the /src/com/flow/ProjectMain.java file and there you go!
 
 ## Sample Output
 
 ### Sample 1
-![output page1](https://github.com/mcvrvikram/LockedMe.com/blob/main/src/com/page1.JPG)
+![output page1](https://github.com/mcvrvikram/LockedMe.com/blob/main/Images/page1.JPG)
 
 ### Sample 2
-![output page2](https://github.com/mcvrvikram/LockedMe.com/blob/main/src/com/page2.JPG)
+![output page2](https://github.com/mcvrvikram/LockedMe.com/blob/main/Images/page2.JPG)
 
 ### Sample 3
-![output page3](https://github.com/mcvrvikram/LockedMe.com/blob/main/src/com/page3.JPG)
+![output page3](https://github.com/mcvrvikram/LockedMe.com/blob/main/Images/page3.JPG)
