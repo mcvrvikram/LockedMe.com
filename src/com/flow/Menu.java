@@ -1,9 +1,6 @@
 package com.flow;
 
 import java.io.File;
-import java.io.FileFilter;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import com.ops.FileOperations;
@@ -13,39 +10,39 @@ public class Menu {
 	private static File dir;
 	private static FileOperations fileOperations;
 	private static Scanner sc = new Scanner(System.in);
-	private static String path;
+	private static String path="/home/vikramcvrgmail/test/";
 	public static void mainMenu() {
 		String option;
+		String InputPath;
 		String isContinue="0";
 		while(true) {
-			
-			System.out.println("Please enter the file Location :");
-			path = sc.nextLine();
-			dir = new File(path);
-			
-			if (dir.isDirectory())
+			System.out.println("Present working directory : "+path);
+			System.out.println("Press 1 to continue ");
+			System.out.println("Press any other key to go to a different directory");
+			System.out.println("Press 0 to exit");
+			String op=sc.nextLine();
+			if(op.equals("1"))
 				break;
+			else if(op.equals("0"))
+				return;
+			System.out.println("Please enter the file Location :");
+			InputPath = sc.nextLine();
+			dir = new File(InputPath);
+			
+			if (dir.isDirectory()) {
+				path=InputPath;
+				break;
+			}
+				
 			else 
 				System.out.println("Invalid File Location");
 		}
-		
-		FileFilter fileFilter = new FileFilter()
-        {
-          @Override
-          public boolean accept(File file) {
-            return !file.isDirectory();
-          }
-        };
-        
-        
-		List<File> files = new ArrayList<>();
-		
-		for(File each:dir.listFiles(fileFilter)){
-			files.add(each);
 			
-		}
 		
-		fileOperations = new FileOperations(files);
+		
+		fileOperations = new FileOperations();
+		fileOperations.setPath(path);
+		
 		System.out.println("List of files within the current dirrectory ");
 		fileOperations.display();
 	
@@ -54,7 +51,7 @@ public class Menu {
 			System.out.println("2. File Operations(Add/Search/Delete)");
 			System.out.println("3. Close Application");
 			System.out.println("Enter your option  : ");
-			//System.out.println("Enter your option : ");
+			
 			option = sc.nextLine();
 			switch (option) {
 			
@@ -66,9 +63,9 @@ public class Menu {
 			case "2": 
 					Menu.subMenu();
 					break;
+					
 			case "3":
-					System.out.println("-------------Thank you!-----------------");
-					System.exit(0);
+					return;
 					
 			default : 
 					System.out.println("Invalid Input");
